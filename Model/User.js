@@ -8,10 +8,11 @@ class Admin{
 }
 
 class Client{
-    constructor(username, meetings,billing){
+    constructor(name, address, username, password){
+        this.name = name;
+        this.address = address;
         this.username = username;
-        this.meetings = meetings;
-        this.billing = billing;
+        this.password = password;
         this.type = 'c';
     }
 }

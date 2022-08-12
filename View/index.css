@@ -44,6 +44,10 @@ body
     display: none;   
 }
 
+#homepage{
+    display: none;
+}
+
 h2{  
     text-align: center;  
     color: navy;  
