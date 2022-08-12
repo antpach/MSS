@@ -1,11 +1,11 @@
-class NormalRoom{
+export class NormalRoom{
     constructor(number, capcity){
         this.number = number;
         this.capcity = capcity;
     }
 }
 
-class SpecialRoom{
+export class SpecialRoom{
     constructor(number, capcity){
         this.number = number;
         this.capcity = capcity;

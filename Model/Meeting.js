@@ -1,4 +1,4 @@
-class Meeting{
+export class Meeting{
     constructor(host, attendees, date, room){
         this.host= host;
         this.attendees = attendees;

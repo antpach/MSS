@@ -1,6 +1,5 @@
-
-import { AccountController } from './Controller/AccountController'; 
-const { userModel } = require('./Model/User');
+import { create } from './Controller/AccountController.js'; 
+const { Client } = require('./Model/Use.js');
 
 const login = document.getElementById("login"); 
 const newAccount = document.getElementById("newAccount");
@@ -12,13 +11,13 @@ const newAccount = document.getElementById("newAccount");
 }
 
 document.getElementById("Create").onclick = () => {
-    userModel = new Client(
+    Client = new Client(
         document.getElementById('name').value,  document.getElementById('address').value, 
         document.getElementById('newU').value,  document.getElementById('pass').value
     );
 
-    const ac = new AccountController(); 
+    
 
-    ac.create(userModel); 
+    create(userModel); 
 }
 

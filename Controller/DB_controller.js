@@ -1,4 +1,4 @@
-const dataStore = require('nedb');
+import dataStore from  'nedb';
 
 const USER_PROFILE_COLLECTION = new dataStore({ filename: './DB/user_profile_collection', autoload: true });
 USER_PROFILE_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
@@ -22,18 +22,19 @@ const Response = {
 };
 
 
- const { userModel } = require('../Model/User');
- const { roomModel } = require('../Model/Room');
- const { meetingrModel } = require('../Model/Meeting');
- const { complaintModel } = require('../Model/Complaint');
+import { Client, Admin } from'../Model/User.js';
+import { NormalRoom,  SpecialRoom} from '../Model/Room.js';
+import { Meeting } from '../Model/Meeting.js';
+import { Complaint } from '../Model/Complaint.js';
+import { Billing } from '../Model/Billing.js';
 
 
- class DB_Controller_Class {
+ export class DB_Controller_Class {
 
     /////////////////////////// USER /////////////////////////////
     addClient(user){
         return new Promise((resolve, reject) => {
-            if ((user instanceof userModel) == false)
+            if ((user instanceof Client) == false)
                 reject(Response.INVALID_ARGUMENT);
             else {
                 USER_PROFILE_COLLECTION.count(

@@ -1,4 +1,4 @@
-class Admin{
+export class Admin{
     constructor(username, meetings, rooms){
         this.username = username;
         this.meetings =meetings;
@@ -7,7 +7,7 @@ class Admin{
     }
 }
 
-class Client{
+export class Client{
     constructor(name, address, username, password){
         this.name = name;
         this.address = address;

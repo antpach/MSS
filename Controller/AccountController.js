@@ -1,14 +1,13 @@
-const { DB_Controller, Response } = require('./Controller/DB_Controller');
-const { userModel } = require('./Model/User');
+import { DB_Controller_Class} from './DB_Controller.js';
+import { Client } from'../Model/User.js';
 
-class AccountController{
-    create(client) {
-        DB_Controller
-        .addClient(new userModel(client.name, client.address,client.username, client.password))
+   export function create(client) {
+    DB_Controller_Class
+        .addClient(new Client(client.name, client.address,client.username, client.password))
         .then((response) => {
             console.log(`user account created\n${client.username} signed in`);
 
-            console.log("success");
+            return true; 
         
 
         }).catch((error) => {
@@ -25,8 +24,7 @@ class AccountController{
                     console.log(message);
             }
             console.log('sending error message...');
+            return false; 
         });
     }
-}
 
-module.exports.TestClass = TestClass;
