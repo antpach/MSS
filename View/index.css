@@ -16,6 +16,15 @@ body
         display: block;        
 }  
 
+#login2{  
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    background: grey;  
+    display: block;        
+}  
+
 #newAccount{ 
     width: 382px;  
     overflow: hidden;  
@@ -26,6 +35,7 @@ body
     border-radius: 15px ; 
     display: none;   
 }
+
 h2{  
     text-align: center;  
     color: navy;  
