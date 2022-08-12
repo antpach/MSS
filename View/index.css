@@ -14,9 +14,17 @@ body
         background: grey;  
         border-radius: 15px ; 
         display: block;        
-}  
+} 
 
-#login2{  
+.in{
+    width: 310px;  
+    height: 30px;  
+    border: none;    
+    border-radius: 3px;  
+    padding-left: 30px; 
+}
+
+#signin{  
     width: 382px;  
     overflow: hidden;  
     margin: auto;  

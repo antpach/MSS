@@ -5,10 +5,10 @@
     <link rel="stylesheet" type="text/css" href="index.css">    
 </head>    
 <body>    
-    <script src="./main.js"></script>
+    <script defer src="./main.js"></script>
     <h2>Login Page</h2><br>    
     <div class="login" id="login" display=" block">  
-    <form id="login2" method="get">    
+    <form id="signin" method="get">    
         <label><b>User Name     
         </b>    
         </label>    
@@ -21,24 +21,37 @@
         <br><br>    
         <input type="button" name="log" id="log" value="Login">       
         <br><br> 
-        <button name="create" id="create" value="Create Login" onclick="createAccount()">Create Account </button>    
+        <button name="create" id="create" value="Create Login" type="button">Create Account </button>    
     </form>     
 </div>    
 
 <div id = "newAccount" class = "create_login" >
     <h1>Create Profile</h1>
-    <form>
-        <label><b>User Name     
+    
+    <form><label><b>Name     
+    </b>    
+    </label>    
+    <input class = "in" type="text" name="name" id="name" placeholder="Name">    
+    <br><br>  
+    
+    <label><b>Address     
+    </b>    
+    </label>    
+    <input class = "in"type="text" name="address" id="address" placeholder="Address">    
+    <br><br>  
+       
+    <label><b>User Name     
         </b>    
         </label>    
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <input class = "in" type="text" name="newU" id="newU" placeholder="Username">    
         <br><br>    
-        <label><b>Password     
+       
+     <label><b>Password     
         </b>    
         </label>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <input  class = "in" type="Password" name="pass" id="pass" placeholder="Password">    
         <br><br>    
-        <input type="button" name="log" id="log" value="Create">       
+        <input type="button" name="Log" id="Log" value="Create">       
     </form>
 
 </div>
