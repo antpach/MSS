@@ -30,14 +30,29 @@ document.getElementById("createRoom").onclick =() =>{
 }
 
 document.getElementById("log").onclick =() =>{
-    login.style.display='none';
-    adminHome.style.display = 'block';
-    document.getElementById("defaultOpen").click();
+    if (document.getElementById('type').checked) {
+        login.style.display='none';
+        adminHome.style.display = 'block';
+        document.getElementById("defaultOpen").click();
+    }
+    else{
+        login.style.display='none';
+        clientHome.style.display = 'block';
+        document.getElementById("defaultOpen2").click();
+    }
+    
 }
 
 document.getElementById("logout").onclick =() => {
-    clientHome.style.display = 'none';
     adminHome.style.display = 'none';
+    login.style.display='block';
+  
+    document.getElementById("clear").click(); 
+   
+}
+
+document.getElementById("logout2").onclick =() => {
+    clientHome.style.display = 'none';
     login.style.display='block';
   
     document.getElementById("clear").click(); 
