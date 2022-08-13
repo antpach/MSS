@@ -5,16 +5,9 @@ body
     background-color:whitesmoke;  
     font-family: 'Arial';  
 }  
-.login{  
-        width: 382px;  
-        overflow: hidden;  
-        margin: auto;  
-        margin: 20 0 0 450px;  
-        padding: 80px;  
-        background: grey;  
-        border-radius: 15px ; 
-        display: block;        
-} 
+
+.header{
+}
 
 .in{
     width: 310px;  
@@ -24,23 +17,24 @@ body
     padding-left: 30px; 
 }
 
-#signin{  
+.form{  
     width: 382px;  
     overflow: hidden;  
     margin: auto;  
     margin: 20 0 0 450px;  
+    padding: 60px;
     background: grey;  
+    border-radius: 15px ; 
     display: block;        
 }  
 
 #newAccount{ 
-    width: 382px;  
-    overflow: hidden;  
-    margin: auto;  
-    margin: 20 0 0 450px;  
-    padding: 80px;  
-    background: grey;  
-    border-radius: 15px ; 
+    
+    display: none;   
+}
+
+#adminHome{ 
+
     display: none;   
 }
 

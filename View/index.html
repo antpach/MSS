@@ -1,34 +1,43 @@
 <!DOCTYPE html>    
 <html>    
-<head>    
-    <title>Login Form</title>    
+<head>     
     <link rel="stylesheet" type="text/css" href="index.css">    
 </head>    
 <body>    
-    <script defer src="./main.js"></script>
-    <h2>Login Page</h2><br>    
-    <div class="login" id="login" display=" block">  
-    <form id="signin" method="get">    
-        <label><b>User Name     
-        </b>    
-        </label>    
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
-        <br><br>    
-        <label><b>Password     
-        </b>    
-        </label>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
-        <br><br>    
-        <input type="button" name="log" id="log" value="Login">       
-        <br><br> 
-        <button name="create" id="create" value="Create Login" type="button">Create Account </button>    
-    </form>     
-</div>    
+    <script defer src="./main.js"></script> 
+    <div class="page" id="login">
+    
+        <div class="header" id="lheader"> 
+            <h2>Login Page</h2><br>   
+        </div> 
 
-<div id = "newAccount" class = "create_login" >
-    <h1>Create Profile</h1>
+       
+    
+        <form class="form" method="get">    
+            <label><b>User Name     
+            </b>    
+            </label>    
+            <input class = "in" type="text" name="Uname" id="Uname" placeholder="Username">    
+            <br><br>    
+            <label><b>Password     
+            </b>    
+            </label>    
+            <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+            <br><br>    
+            <input type="button" name="log" id="log" value="Login">       
+            <br><br> 
+            <button name="create" id="create" value="Create Login" type="button">Create Account </button>    
+        </form>     
+         
+</div>   
 
-    <form><label><b>Name     
+<div id = "newAccount"  >
+    <div class="header" id="cpheader"> 
+        <h2>Create Profile</h2><br>   
+    </div> 
+
+    <form class="form" method="get">
+        <label><b>Name     
     </b>    
     </label>    
     <input class = "in" type="text" name="name" id="name" placeholder="Name">    
@@ -55,16 +64,32 @@
     </form>
 
 </div>
-</body>    
+<div id="adminHome" >
+   <title>Administration Page</title>
+   <div class="header" id="lheader"> 
+    <h2>Administration Page</h2><br> 
+   </div> 
+  
+    <form class="form"  id="roomCreate" method="get">
+      <label><b>Room Number
+      </b>
+      </label>
+      <input type="text" name="Rnum" id="Rnum" placeholder="Room Number">
+      <br><br>
+      <label><b>Room Capacity
+      </b>
+      </label>
+      <input type="text" name="Rcap" id="Rcap" placeholder="Capacity">
+      <br><br>
+      <label><b>Room Cost
+      </b>
+      </label>
+      <input type="number" name="Rcost" id="Rcost" placeholder="Cost">
+      <br><br>
+      <input type="button" name="log" id="createRoom" value="Create Room">
+    </form>
+
+  </div>
+</div>   
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-aaaaaaaaaaaaa
-</body>
-</html>
