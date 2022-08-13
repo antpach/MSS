@@ -7,6 +7,8 @@ body
 }  
 
 .header{
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .in{
@@ -15,22 +17,36 @@ body
     border: none;    
     border-radius: 3px;  
     padding-left: 30px; 
+
+    
+    transform: translate(0, 15%);
 }
 
-.form{  
+.border{  
     width: 382px;  
     overflow: hidden;  
     margin: auto;  
     margin: 20 0 0 450px;  
-    padding: 60px;
+    padding: 25px;
     background: grey;  
-    border-radius: 15px ; 
-    display: block;        
+    border-radius: 15px ;       
 }  
+
+#roomMangement{
+   display: none; 
+}
+
+#meetingCreate{
+    display: none; 
+ }
 
 #newAccount{ 
     
     display: none;   
+}
+
+#newMeeting{ 
+    margin-top: 50px; 
 }
 
 #adminHome{ 
@@ -38,10 +54,22 @@ body
     display: none;   
 }
 
+#clientHome{ 
+
+    display: none;   
+}
+
+
 h2{  
     text-align: center;  
     color: navy;  
     padding: 20px;  
+}  
+
+h3{  
+    text-align: left;  
+    color: navy;  
+    padding: 10px;  
 }  
 label{  
     color: navy;  
@@ -72,6 +100,26 @@ label{
 
 
 }  
+
+#create{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+
+} 
+
+#back{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+
+} 
 span{  
     color: white;  
     font-size: 17px;  
@@ -80,3 +128,105 @@ a{
     float: right;  
     background-color: grey;  
 }   
+
+.tab {
+    overflow: hidden;
+    border: 1px solid rgb(13, 42, 138);
+    background-color: grey;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+  /* Split the screen in half */
+.split {
+    height: 70%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 50;
+    overflow-x: hidden;
+    padding-top: 15px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    right: 50;
+    background-color: grey;
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 60px;  
+    border-radius: 45px ;
+    margin-left: 75px; 
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: grey;
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px; 
+    margin-right: 75px; 
+    padding: 60px;  
+    border-radius: 45px ; 
+
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50%;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }

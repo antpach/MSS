@@ -10,21 +10,19 @@
         <div class="header" id="lheader"> 
             <h2>Login Page</h2><br>   
         </div> 
-
-       
     
-        <form class="form" method="get">    
+        <form class="border" method="get">    
             <label><b>User Name     
             </b>    
             </label>    
-            <input class = "in" type="text" name="Uname" id="Uname" placeholder="Username">    
+            <input  class = "in" type="text" name="Uname" id="Uname" placeholder="Username">    
             <br><br>    
             <label><b>Password     
             </b>    
             </label>    
-            <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+            <input class = "in" type="Password" name="Pass" id="Pass" placeholder="Password">    
             <br><br>    
-            <input type="button" name="log" id="log" value="Login">       
+            <input class = "in" type="button" name="log" id="log" value="Login">       
             <br><br> 
             <button name="create" id="create" value="Create Login" type="button">Create Account </button>    
         </form>     
@@ -36,7 +34,7 @@
         <h2>Create Profile</h2><br>   
     </div> 
 
-    <form class="form" method="get">
+    <form class="border" method="get">
         <label><b>Name     
     </b>    
     </label>    
@@ -60,36 +58,254 @@
         </label>    
         <input  class = "in" type="Password" name="pass" id="pass" placeholder="Password">    
         <br><br>    
-        <input type="button" name="Log" id="Log" value="Create">       
+        <input type="button" name="Log" id="create" value="Create">   
+        <br><br> 
+        <input type="button" name="back" id="back" value="Log in">    
     </form>
 
 </div>
 <div id="adminHome" >
    <title>Administration Page</title>
-   <div class="header" id="lheader"> 
-    <h2>Administration Page</h2><br> 
+   <div class="header" id="aheader"> 
+        <h2>Administration Page</h2><br> 
    </div> 
-  
-    <form class="form"  id="roomCreate" method="get">
-      <label><b>Room Number
-      </b>
-      </label>
-      <input type="text" name="Rnum" id="Rnum" placeholder="Room Number">
-      <br><br>
-      <label><b>Room Capacity
-      </b>
-      </label>
-      <input type="text" name="Rcap" id="Rcap" placeholder="Capacity">
-      <br><br>
-      <label><b>Room Cost
-      </b>
-      </label>
-      <input type="number" name="Rcost" id="Rcost" placeholder="Cost">
-      <br><br>
-      <input type="button" name="log" id="createRoom" value="Create Room">
-    </form>
 
+   <div class="tab">
+    <button class="tablinks" onclick="openChoice(event, 'home')" id = "defaultOpen">Home </button>
+    <button class="tablinks" onclick="openChoice(event, 'roomMangement')">Room Management</button>
+    <button class="tablinks" id="logout" >Logout</button>
   </div>
-</div>   
+
+  <!-- Tab content -->
+
+  <div id = "home"  class="tabcontent">
+    <h2>Complaints</h2><br>
+    <div class = "border">
+        <ul>
+            <li>test</li>
+            <li>yerp</li>
+        </ul>
+    </div>
+   
+   </div>
+   
+   <div class = tabcontent id = "roomMangement">
+    <h2>Room Management</h2><br>
+    <div class = "border">
+        <form  id="roomCreate" method="get">
+            <h3>Create Room</h3>
+        <label><b>Room Number
+        </b>
+        </label>
+        <input class = "in" type="text" name="Rnum" id="Rnum" placeholder="Room Number">
+        <br><br>
+        <label><b>Room Capacity
+        </b>
+        </label>
+        <input class = "in" type="text" name="Rcap" id="Rcap" placeholder="Capacity">
+        <br><br>
+        <label><b>Room Cost
+        </b>
+        </label>
+        <input class = "in" type="number" name="Rcost" id="Rcost" placeholder="Cost">
+        <br><br>
+        <input class = "in" type="button" name="log" id="createRoom" value="Create">
+        <br><br>        
+        </form>
+
+        <form method="get">
+            <h3>Remove Room</h3>
+            <label><b>Select Room
+            </b>
+            <select class = "in" type="text" name="roomList" id="roomList" placeholder="Select Room">
+                <option value=""></option>
+                <option>1</option>
+                <option>45</option>
+            </select>
+            <br><br>
+            <input class = "in" type="button" name="removeRoom" id="removeRoom" value="Remove">
+            <br><br>
+            </form>
+        </div>
+    </div>
+
+</div> 
+
+<div id="clientHome" >
+    <title>Client Page</title>
+    <div class="header" id="aheader"> 
+     <h2>Meeting Scheduling System</h2><br> 
+    </div> 
+
+    <div class="tab">
+        <button class="tablinks" onclick="openChoice(event, 'home')" id = "defaultOpen">Home </button>
+        <button class="tablinks" onclick="openChoice(event, 'newMeeting')">Create Meeting</button>
+        <button class="tablinks" onclick="openChoice(event, 'editMeeting')">Edit Meeting</button>
+        <button class="tablinks" onclick="openChoice(event, 'editAccount')">Edit Profile</button>
+        <button class="tablinks" onclick="openChoice(event, 'sendCompaint')">SendComplaint</button>
+        <button class="tablinks" id="logout" >Logout</button>
+      </div>
+      
+      <!-- Tab content -->
+
+        <div id = "home"  class="tabcontent">
+            <h2>HomePage</h2><br>
+            <div class="split left">
+                  <h2>Hosted Meetings</h2>
+                </div>
+              
+              <div class="split right">
+                  <h2>Attending Meetings</h2>
+                </div>
+        </div>
+      
+
+      <div id="newMeeting" class="tabcontent">
+        <h2>Create Meeting</h2>
+        <form class = 'border'  method="get">
+        <label><b>Room Number
+        </b>
+        <input class = "in" type="text" name="Rnum" id="Rnum" placeholder="Room Number">
+        <br><br>
+        <label><b>Attendees
+        </b>
+        </label>
+        <input class = "in" type="text" name="attendees" id="attendees" placeholder="Attendees">
+        <br><br>
+        <label><b>Time
+        </b>
+        </label>
+        <input class = "in" type="time" name="time" id="time" placeholder="Time">
+        <br><br>
+        <label><b>Date  
+        </b><br>
+        </label>
+        <input class = "in" type="date" name="date" id="date" placeholder="Date">
+        <br><br>
+        <input class = "in" type="button" name="log" id="createRoom" value="Create Meeting">
+        <br><br>
+        <input class = "in" type="reset" id="clear" value="Clear">
+      </form>
+      </div>
+      
+      <div id="editMeeting" class="tabcontent">
+        <h2>Modify Meeting</h2>
+        <form class = 'border'  method="get">
+            <label><b>Select Meeting
+            </b>
+            <select class = "in" type="text" name="meeting" id="meetingList" placeholder="Select Meeting(s)">
+                <option value=""></option>
+                <option>one</option>
+                <option>two</option>
+            </select>
+            <br><br>
+            <label><b>Remove Attendee
+            </b>
+            <select class = "in" type="text" name="Rnum" id="Rnum" placeholder="Room Number">
+                <option value=""></option>
+                <option>one</option>
+                <option>two</option>
+            </select>
+            <br><br>
+            <input class = "in" type="button" name="removeAttend" id="removeAttend" value="Remove Attendee(s)">
+            <br><br>
+            <label><b>Add Attendees
+            </b>
+            </label>
+            <select class = "in" type="text" name="attendees" id="attendees" placeholder="Add Attendees">
+                <option value=""></option>
+                <option>test</option>
+                <option>teeest</option>
+            </select>
+            <br><br>
+            <input class = "in" type="button" name="addAttend" id="addAttend" value="Add Attendee(s)">
+            <br><br>
+            <label><b>Time
+            </b>
+            </label>
+            <input class = "in" type="time" name="time" id="time" placeholder="Time" min = "09:00:00" max = "17:00:00">
+            <br><br>
+            <label><b>Date  
+            </b><br>
+            </label>
+            <input class = "in" type="date" name="date" id="date" placeholder="Date">
+            <br><br>
+            <input class = "in" type="button" name="log" id="editMeeting" value="Make Changes">
+            <br><br>
+            <input class = "in" type="reset" id="clear" value="Clear">
+          </form>
+      </div>
+      
+      <div id="editAccount" class="tabcontent">
+        <h2>Edit Profile</h2> 
+        <form class = 'border'  method="get">
+            <h3>Account Information</h3>
+        <label><b>Username
+        </b>
+        <input class = "in" type="text" name="first" id="first" placeholder="Enter Username">
+        <br><br>
+        <label><b>Old Password
+        </b>
+        </label>
+        <input class = "in" type="password" name="oldpass" id="oldpass" placeholder="Enter Old Password">
+        <br><br>
+
+        <label><b>New Password
+        </b>
+        </label>
+        <input class = "in" type="password" name="newpass" id="new pass" placeholder="Enter New Password">
+        <br><br>
+        
+        <input class = "in" type="button"  id="personal" value="Update Account Inforamtion">
+        <br><br>
+        <input class = "in" type="reset" id="clear" value="Clear">
+      </form>
+
+      <form class = 'border'  method="get">
+        <h3>Billing Information </h3>
+        <label><b>Name
+        </b>
+        <input class = "in" type="text" name="name" id="name" placeholder="Enter Name">
+        <br><br>
+        <label><b>Address
+        </b>
+        </label>
+        <input class = "in" type="text" name="last" id="addr" placeholder="Enter Address">
+        <br><br>
+        
+        <input class = "in" type="button"  id="personal" value="Update Billing Inforamtion">
+        <br><br>
+        <input class = "in" type="reset" id="clear" value="Clear">
+      </form>
+
+      </div>
+
+      <div id="sendCompaint" class="tabcontent">
+        <h2>Send Compaint</h2>
+        <form class = 'border'  method="get">
+            <label><b>Subject
+            </b>
+            <input class = "in" type="text" name="name" id="name" placeholder="Enter Subject">
+            <br><br>
+            <label><b>Message
+            </b>
+            </label>
+            <textArea class = "in" type="text" name="message" id="message" placeholder="Enter Message"
+            cols="40" rows="40" maxlength= "200" required></textArea>
+            <br><br>
+            
+            <input class = "in" type="button"  id="personal" value="Send Complaint">
+            <br><br>
+            <input class = "in" type="reset" id="clear" value="Clear">
+          </form>
+        
+      </div>
+
+   
+   
+     
+ 
+   </div>
+ </div> 
 </html>
 

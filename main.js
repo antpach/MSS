@@ -1,13 +1,13 @@
 const login = document.getElementById("login");
 const newAccount = document.getElementById("newAccount");
 const adminHome = document.getElementById("adminHome");
+const clientHome = document.getElementById("clientHome");
 
  document.getElementById("create").onclick =() =>{
      login.style.display='none';
      newAccount.style.display = 'block';
 }
 
-const room = require("../Model/Room");
 
 document.getElementById("createRoom").onclick =() =>{
 
@@ -32,4 +32,40 @@ document.getElementById("createRoom").onclick =() =>{
 document.getElementById("log").onclick =() =>{
     login.style.display='none';
     adminHome.style.display = 'block';
+    document.getElementById("defaultOpen").click();
 }
+
+document.getElementById("logout").onclick =() => {
+    clientHome.style.display = 'none';
+    adminHome.style.display = 'none';
+    login.style.display='block';
+  
+    document.getElementById("clear").click(); 
+   
+}
+
+document.getElementById("back").onclick =() => {
+    newAccount.style.display = 'none';
+    login.style.display='block';
+}
+
+function openChoice(evt, choice) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(choice).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
