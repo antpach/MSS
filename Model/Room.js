@@ -12,3 +12,8 @@ class SpecialRoom{
         let cost = 100; 
     }
 }
+
+module.exports = {
+    NormalRoom : NormalRoom,
+    SpecialRoom : SpecialRoom
+}

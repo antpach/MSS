@@ -1,4 +1,4 @@
-const dataStore = require('nedb');
+const dataStore = require('nedb')
 
 const USER_PROFILE_COLLECTION = new dataStore({ filename: './DB/user_profile_collection', autoload: true });
 USER_PROFILE_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
@@ -16,6 +16,7 @@ const Response = {
     INCORRECT_PASSWORD: 'incorrect password',
     USERNAME_NOT_FOUND: 'username not found',
     USERNAME_TAKEN: 'username taken',
+    ROOM_NUMBER_TAKEN: 'room number taken',
     INVALID_ARGUMENT: 'invalid argument',
     NOT_ITEM_TO_UPDATE: 'no item to update',
     ERROR: 'error'
@@ -59,5 +60,36 @@ const Response = {
             }
         });
     }
+
+    addRoom(room)
+    {
+        return new Promise((resolve,reject) => {
+
+                ROOM_COLLECTION.count(
+                    {room_num: room.number},
+                    (err, numberOfRoomsFound) => {
+                        if(err)
+                            reject(err)
+                        else if (numberOfRoomsFound > 0)
+                            reject(Response.ROOM_NUMBER_TAKEN)
+                        else {
+                            ROOM_COLLECTION.insert(
+                            room,
+                                (err,doc) => {
+                                if(err)
+                                    reject(err);
+                                else
+                                    resolve(doc)
+                                });
+                        }
+                    }
+                )
+        })
+    }
+
+ }
+ module.exports = {
+     DB_Controller_Class,
+     Response
 
  }
