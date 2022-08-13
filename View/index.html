@@ -24,7 +24,9 @@
             <br><br>    
             <input class = "in" type="button" name="log" id="log" value="Login">       
             <br><br> 
-            <button name="create" id="create" value="Create Login" type="button">Create Account </button>    
+            <button name="create" id="create" value="Create Login" type="button">Create Account </button> 
+            <br><br>    
+            <input type="checkbox" name="type" id="type"><label>Admin sign on</label>  
         </form>     
          
 </div>   
@@ -71,14 +73,16 @@
    </div> 
 
    <div class="tab">
-    <button class="tablinks" onclick="openChoice(event, 'home')" id = "defaultOpen">Home </button>
+    <button class="tablinks" onclick="openChoice(event, 'complaints')" id = "defaultOpen">Complaints </button>
     <button class="tablinks" onclick="openChoice(event, 'roomMangement')">Room Management</button>
+    <button class="tablinks" onclick="openChoice(event, 'createAdmin')">Create Admin</button>
+    <button class="tablinks" onclick="openChoice(event, 'allMeetings')">Create Admin</button>
     <button class="tablinks" id="logout" >Logout</button>
   </div>
 
   <!-- Tab content -->
 
-  <div id = "home"  class="tabcontent">
+  <div id = "complaints"  class="tabcontent">
     <h2>Complaints</h2><br>
     <div class = "border">
         <ul>
@@ -129,6 +133,60 @@
         </div>
     </div>
 
+    <div class = "tabcontent" id = "createAdmin">
+        <h2>Create Administrator</h2>
+        <form class = 'border'  method="get">
+            <label><b>Name
+            </b>
+            </label>
+            <input class = "in" type="text" name="aname" id="anmae" placeholder="Enter Name">
+            <br><br>
+            <label><b>Username
+            </b>
+            <input class = "in" type="text" name="auname" id="auname" placeholder="Enter Username">
+            <br><br>
+            <label><b>Temp Password
+            </b>
+            </label>
+            <input class = "in" type="password" name="tempass" id="tempass" placeholder="Enter Temporary Password">
+            <br><br>
+            <input class = "in" type="button"  id="adminnew" value="Create new Admin">
+            <br><br>
+            <input class = "in" type="reset" id="clear" value="Clear">
+        </form>  
+    </div>
+
+    <div class = "tabcontent" id = "allMeetings">
+        <h2>Meeting Filter</h2>
+        <form class = border method = "post">
+            <label><b>Room Number
+            </b>
+            <input class = "in" type="text" name="Rnum" id="Rnum" placeholder="Room Number">
+            <br><br>
+            <label><b>Date  
+            </b><br>
+            </label>
+            <input class = "in" type="date" name="date" id="date" placeholder="Date">
+            <br><br>
+            <label><b>Attendees
+            </b>
+            </label>
+            <input class = "in" type="text" name="attendees" id="attendees" placeholder="Attendees">
+            <br><br>
+            <label><b>Time
+            </b>
+            </label>
+            <input class = "in" type="time" name="time" id="time" placeholder="Time">
+            <br><br>
+            <ul>Results
+                <li>make this a clickable object</li>
+            </ul>
+            <br><br>
+            <input class = "in" type="reset" id="clear" value="Clear">
+
+        </form>
+    </div>
+
 </div> 
 
 <div id="clientHome" >
@@ -138,12 +196,12 @@
     </div> 
 
     <div class="tab">
-        <button class="tablinks" onclick="openChoice(event, 'home')" id = "defaultOpen">Home </button>
+        <button class="tablinks" onclick="openChoice(event, 'home')" id = "defaultOpen2">Home </button>
         <button class="tablinks" onclick="openChoice(event, 'newMeeting')">Create Meeting</button>
         <button class="tablinks" onclick="openChoice(event, 'editMeeting')">Edit Meeting</button>
         <button class="tablinks" onclick="openChoice(event, 'editAccount')">Edit Profile</button>
         <button class="tablinks" onclick="openChoice(event, 'sendCompaint')">SendComplaint</button>
-        <button class="tablinks" id="logout" >Logout</button>
+        <button class="tablinks" id="logout2" >Logout</button>
       </div>
       
       <!-- Tab content -->
