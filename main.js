@@ -3,10 +3,28 @@ const newAccount = document.getElementById("newAccount");
 const adminHome = document.getElementById("adminHome");
 const clientHome = document.getElementById("clientHome");
 
+const {Client, User} = require('./Model/User')
+const {AccountController} = require('./Contoller/AccountController')
+
  document.getElementById("create").onclick =() =>{
      login.style.display='none';
      newAccount.style.display = 'block';
 }
+
+document.getElementById("newClient").onclick =() =>{
+    let username = document.getElementById("newU");
+    let name = document.getElementById("name"); 
+    let address = document.getElementById("address"); 
+    let password = document.getElementById("password"); 
+
+    Client= new Client(username, null, name, address, password);
+    AccountController = new AccountController(); 
+    let ans = AccountController.create(Client);
+
+    console.log(ans);
+}
+
+
 
 
 document.getElementById("createRoom").onclick =() =>{
