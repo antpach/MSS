@@ -4,14 +4,14 @@
     <link rel="stylesheet" type="text/css" href="index.css">    
 </head>    
 <body>    
-    <script defer src="./main.js"></script> 
+    <script defer src="main.js"></script>
     <div class="page" id="login">
     
         <div class="header" id="lheader"> 
             <h2>Login Page</h2><br>   
         </div> 
     
-        <form class="border" method="get">    
+        <form class="border" method="POST">
             <label><b>User Name     
             </b>    
             </label>    
@@ -24,7 +24,7 @@
             <br><br>    
             <input class = "in" type="button" name="log" id="log" value="Login">       
             <br><br> 
-            <button name="create" id="create" value="Create Login" type="button">Create Account </button> 
+            <button name="create" id="create" value="Create Login" type="button">Create Account </button>
             <br><br>    
             <input type="checkbox" name="type" id="type"><label>Admin sign on</label>  
         </form>     
@@ -36,17 +36,17 @@
         <h2>Create Profile</h2><br>   
     </div> 
 
-    <form class="border" method="get">
+    <form class="border" method="get" id="CreateUserForm">
         <label><b>Name     
     </b>    
     </label>    
-    <input class = "in" type="text" name="name" id="name" placeholder="Name">    
+    <input class = "in" type="text" name="name" id="uFullName" placeholder="Name">
     <br><br>  
 
     <label><b>Address     
     </b>    
     </label>    
-    <input class = "in"type="text" name="address" id="address" placeholder="Address">    
+    <input class = "in"type="text" name="address" id="uAddress" placeholder="Address">
     <br><br>  
 
     <label><b>User Name     
@@ -58,9 +58,9 @@
      <label><b>Password     
         </b>    
         </label>    
-        <input  class = "in" type="Password" name="pass" id="pass" placeholder="Password">    
+        <input  class = "in" type="Password" name="pass" id="newUpass" placeholder="Password">
         <br><br>    
-        <input type="button" name="Log" id="create" value="Create">   
+        <input type="button" name="Log" id="createUser" value="Create">
         <br><br> 
         <input type="button" name="back" id="back" value="Log in">    
     </form>
@@ -135,7 +135,7 @@
 
     <div class = "tabcontent" id = "createAdmin">
         <h2>Create Administrator</h2>
-        <form class = 'border'  method="get">
+        <form class = 'border'  method="get" >
             <label><b>Name
             </b>
             </label>

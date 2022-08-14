@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 const multer = require('multer');
 const upload = multer();
 const app = express();
+const path = require('path');
 const ADMINC  = require('./Controller/AdminController');
-
+const USERC = require('./Controller/AccountController');
 
 // for parsing application/json
 app.use(bodyParser.json());
@@ -24,10 +25,18 @@ app.get('/',function (req,res)
     res.send('hi')
 });
 
-app.post('/newRoom',function (req,res){
+app.get('/newRoom',function (req,res){
     console.log(req.body);
     res.send("Room Created")
     ADMINC(req.body.Rnum,req.body.Rcap,req.body.Rcost);
+})
+
+app.post('/newAccount', function (req,res){
+    console.log("Created New User")
+    console.log(req.body)
+    res.send("User created")
+    let ac = new USERC.AccountController_Class();
+    ac.createUser(req.body.name,req.body.address,req.body.newU,req.body.pass);
 })
 
 const server = http.createServer(app).listen(8080,function (err) {

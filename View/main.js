@@ -3,9 +3,28 @@ const newAccount = document.getElementById("newAccount");
 const adminHome = document.getElementById("adminHome");
 const clientHome = document.getElementById("clientHome");
 
+function httpGet(theUrl,body)
+{
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", theUrl, false ); // false for synchronous request
+    xmlHttp.send( body );
+    return xmlHttp.responseText;
+}
+
+
  document.getElementById("create").onclick =() =>{
      login.style.display='none';
      newAccount.style.display = 'block';
+     console.log("Create Clicked")
+}
+
+document.getElementById("createUser").onclick = () =>{
+    let data = new FormData(document.getElementById("CreateUserForm"));
+    let response = httpGet(window.location.origin + "/newAccount",data)
+    login.style.display='block';
+    newAccount.style.display = 'none';
+    console.log("Sending Create User Request")
+    alert(response)
 }
 
 
