@@ -1,15 +1,15 @@
 const dataStore = require('nedb')
 
-const USER_PROFILE_COLLECTION = new dataStore({ filename: '../DB/user_profile_collection', autoload: true });
+const USER_PROFILE_COLLECTION = new dataStore({ filename: './DB/user_profile_collection', autoload: true });
 USER_PROFILE_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
 
-const ROOM_COLLECTION = new dataStore({ filename: '../DB/room_collection', autoload: true });
+const ROOM_COLLECTION = new dataStore({ filename: './DB/room_collection', autoload: true });
 ROOM_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
 
-const MEETING_COLLECTION = new dataStore({ filename: '/DB/meeting_collection', autoload: true });
+const MEETING_COLLECTION = new dataStore({ filename: './DB/meeting_collection', autoload: true });
 MEETING_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
 
-const COMPLAINT_COLLECTION = new dataStore({ filename: '../DB/complaint_collection', autoload: true });
+const COMPLAINT_COLLECTION = new dataStore({ filename: './DB/complaint_collection', autoload: true });
 COMPLAINT_COLLECTION.persistence.setAutocompactionInterval(60000 /*ms*/)
 
 const Response = {
