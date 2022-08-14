@@ -1,7 +1,7 @@
 //import { DB_Controller_Class} from './DB_Controller.js';
 // import { Client } from'../Model/User.js';
-const DB_Controller = require('./DB_Controller.js')
-const {Client, User} = require('../User.js')
+const DB_Controller = require('./DB_Controller')
+const {Client, User} = require('../User')
 
 class AccountController{
      create(client) {
@@ -9,10 +9,7 @@ class AccountController{
             .addClient(new Client(client.name, client.address,client.username, client.password))
             .then((response) => {
                 console.log(`user account created\n${client.username} signed in`);
-    
                 return true; 
-            
-    
             }).catch((error) => {
                 let message = null;
                 switch (error) {
